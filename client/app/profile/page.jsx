@@ -115,10 +115,7 @@ const profile = () => {
         </div>
       </div>
       <Script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></Script>
-      <Script
-        src="https://mediafiles.botpress.cloud/0ea2eab2-7b97-48d3-bd1b-a3a1685b6b52/webchat/config.js"
-        defer
-      ></Script>
+<Script src="https://mediafiles.botpress.cloud/0ea2eab2-7b97-48d3-bd1b-a3a1685b6b52/webchat/config.js" defer></Script>
     </>
   );
 };
