@@ -10,3 +10,6 @@
   --test: 'Sedgwick Ave Display', sans-serif;
 }
 
+*{
+  overflow: hidden;
+}
