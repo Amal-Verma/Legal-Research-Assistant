@@ -1,0 +1,23 @@
+.title{
+    padding: 10px;
+    margin: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.boxx{
+    
+}
+
+.but{
+    margin: 20px;
+    padding: 10px;
+    height: 400px;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.but:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.03);
+}

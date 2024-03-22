@@ -1,10 +1,36 @@
 "use client"
 
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import useGetUser from "./../integration/getUser";
+// import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import { useRef } from 'react';
+import WebViewer from "@pdftron/webviewer";
+import './page.css'
 
 const profile = () => {
-  let {user, getUser} = useGetUser();
+  const viewer = useRef(null);
+  useEffect(() => {
+    import('@pdftron/webviewer').then(() => {
+    WebViewer(
+    {
+    path: '/webviewer/lib',
+    initialDoc: 'https://calibre-ebook.com/downloads/demos/demo.docx',
+    },
+    viewer.current
+    ).then((instance) => {
+    const { docViewer } = instance;
+    // you can now call WebViewer APIs here ...
+    });
+  });
+    }, []);
+  const docs = [
+    {
+        uri:"https://calibre-ebook.com/downloads/demos/demo.docx",
+        fileType: "docx",
+fileName: "docreader.docx"
+    },
+  ];
+  let { user, getUser } = useGetUser();
 
   useEffect(() => {
     // setName(getUser().username)
@@ -12,6 +38,7 @@ const profile = () => {
     // setName(user.username)
     // console.log(user);
   }, []);
+  const items = ["amal", "is", "very", "noob", "lmao", "xd"]
 
   return (
     <div className="bg-slate-500 h-screen w-screen">
@@ -35,6 +62,29 @@ const profile = () => {
               ></path>
             </svg>
           </button>
+        </div>
+      </div>
+      <div className="ghk">
+        <div className="title">Defaults</div>
+        <div className="cards ">
+          {items.map((item, index) => (
+            <>
+              <div className="btn but" onClick={() => document.getElementById('my_modal_4').showModal()} key={index}>{item}</div>
+              <dialog id="my_modal_4" className="modal">
+                <div className="boxx modal-box w-11/12 max-w-5xl">
+                  <h3 className="font-bold text-lg">Hello!</h3>
+                  <div className='MyComponent'>
+<div className='webviewer' ref={viewer} style={{ height: '1000' }}></div>
+</div>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </>
+          ))}
         </div>
       </div>
     </div>
