@@ -21,5 +21,5 @@ def scrape_endpoint():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)  # Change the port to 3000
+    app.run(debug=True, port=5000)  # Change the port to 3000
 
