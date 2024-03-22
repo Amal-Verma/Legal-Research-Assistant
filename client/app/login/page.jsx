@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import loginSubmit from "./../integration/login";
+import styles from './login.module.css'
 
 const login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -18,49 +19,26 @@ const login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
-            <h1 className="text-2xl font-bold">Login</h1>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="email"
-                className="input input-bordered"
-                name="email"
-                value = {credentials.email}
-                onChange={(e) => handleChanges(e)}
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="password"
-                className="input input-bordered"
-                name="password"
-                value={credentials.password}
-                onChange={(e) => {
-                  handleChanges(e);
-                }}
-                required
-              />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
-            </div>
-            <div className="form-control mt-6">
-              <button className="btn btn-primary" onClick={(e) => handleSubmit(e)}>Login</button>
-            </div>
+    <div className="overflow-hidden h-full">
+      <div className="login-container flex flex-col justify-center items-center gap-10 md:flex-row h-screen md:gap-48 fixed md:static inset-0 overflow-auto" style={{backgroundColor:"#D243D2"}}>
+        <img src="/illus.png" alt="" width="60%" className="md:w-2/4" />
+        <div className="w-full flex flex-col gap-12 items-center justify-center md:h-screen md:rounded-s-badge" style={{backgroundColor:"#fff"}}>
+          <h1 className="text-2xl font-extrabold text-black" style={{fontFamily: 'var(--Inter)'}}>Sign In</h1>
+          <form className="flex flex-col items-center justify-center gap-6">
+            <input type="email" placeholder="Email" name="email" className="border-2 " value={credentials.email}
+              onChange={(e) => handleChanges(e)}
+              required />
+            <input type="password" placeholder="Password" name="password" className="border-2" value={credentials.password}
+              onChange={(e) => {
+                handleChanges(e);
+              }}
+              required />
+            <label className="label">
+              <a href="#" className="label-text-alt link link-hover">
+                Forgot password?
+              </a>
+            </label>
+            <button className="btn btn-primary" onClick={(e) => handleSubmit(e)}>Login</button>
           </form>
         </div>
       </div>
