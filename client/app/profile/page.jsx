@@ -6,7 +6,8 @@ import useGetUser from "./../integration/getUser";
 import { useRef } from 'react';
 import WebViewer from "@pdftron/webviewer";
 import './page.css'
-
+import Image from "next/image";
+// import l1 from '../public/legalimage1.jpg';
 const profile = () => {
   const viewer = useRef(null);
   useEffect(() => {
@@ -38,10 +39,11 @@ fileName: "docreader.docx"
     // setName(user.username)
     // console.log(user);
   }, []);
-  const items = ["amal", "is", "very", "noob", "lmao", "xd"]
+  const items = ["/legalimage1.jpg", "/legalimage2.jpg", "/legalimage3.jpg", "/legalimage4.jpg", "/legalimage5.jpg"]
+  const niggs = ["Non Disclosure Agreement","Work for Hire Agreement","Referal Agreement","Property Management Agreement","Agency Agreement"]
 
   return (
-    <div className="bg-slate-500 h-screen w-screen">
+    <div className="bg-slate-500 h-full w-screen">
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">{user.username}</a>
@@ -69,13 +71,13 @@ fileName: "docreader.docx"
         <div className="cards ">
           {items.map((item, index) => (
             <>
-              <div className="btn but" onClick={() => document.getElementById('my_modal_4').showModal()} key={index}>{item}</div>
-              <dialog id="my_modal_4" className="modal">
+              <div className="btn but" onClick={() => document.getElementsByClassName("modalniga")[index].showModal()} key={index}>
+              <Image src={item} alt="" width={500} height={500}/>
+              </div>
+              <dialog className="modal modalniga">
                 <div className="boxx modal-box w-11/12 max-w-5xl">
                   <h3 className="font-bold text-lg">Hello!</h3>
-                  <div className='MyComponent'>
-<div className='webviewer' ref={viewer} style={{ height: '1000' }}></div>
-</div>
+                  <Image src={item} alt="" width={500} height={500}/>
                   <div className="modal-action">
                     <form method="dialog">
                       <button className="btn">Close</button>
