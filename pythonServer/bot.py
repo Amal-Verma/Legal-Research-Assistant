@@ -7,7 +7,7 @@ import time
 
 
 # Function to scrape the website
-def scrape_website(prompt_text):
+def ai_chat_bot(prompt_text):
     # Set Chrome options for headless mode
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # Enable headless mode
