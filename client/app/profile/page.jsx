@@ -72,12 +72,14 @@ fileName: "docreader.docx"
           {items.map((item, index) => (
             <>
               <div className="btn but" onClick={() => document.getElementsByClassName("modalniga")[index].showModal()} key={index}>
-              <Image src={item} alt="" width={500} height={500}/>
+              <Image src={item} alt="" width={300} height={300}/>
+              <div>{niggs[index]}</div>
               </div>
               <dialog className="modal modalniga">
                 <div className="boxx modal-box w-11/12 max-w-5xl">
                   <h3 className="font-bold text-lg">Hello!</h3>
                   <Image src={item} alt="" width={500} height={500}/>
+                  <div>{niggs[index]}</div>
                   <div className="modal-action">
                     <form method="dialog">
                       <button className="btn">Close</button>
