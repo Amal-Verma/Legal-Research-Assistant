@@ -43,7 +43,7 @@ fileName: "docreader.docx"
   const niggs = ["Non Disclosure Agreement","Work for Hire Agreement","Referal Agreement","Property Management Agreement","Agency Agreement"]
 
   return (
-    <div className="bg-slate-500 h-screen w-screen">
+    <div className="bg-slate-500 h-full w-screen">
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">{user.username}</a>
@@ -71,7 +71,7 @@ fileName: "docreader.docx"
         <div className="cards ">
           {items.map((item, index) => (
             <>
-              <div className="btn but" onClick={() => document.querySelector(".modalniga").showModal()} key={index}>
+              <div className="btn but" onClick={() => document.getElementsByClassName("modalniga")[index].showModal()} key={index}>
               <Image src={item} alt="" width={500} height={500}/>
               </div>
               <dialog className="modal modalniga">
