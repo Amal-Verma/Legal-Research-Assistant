@@ -1,34 +1,35 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
 import useGetUser from "./../integration/getUser";
 // import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
-import { useRef } from 'react';
+import { useRef } from "react";
 import WebViewer from "@pdftron/webviewer";
-import './page.css'
+import "./page.css";
 import Image from "next/image";
+import Script from "next/script";
 // import l1 from '../public/legalimage1.jpg';
 const profile = () => {
   const viewer = useRef(null);
   useEffect(() => {
-    import('@pdftron/webviewer').then(() => {
-    WebViewer(
-    {
-    path: '/webviewer/lib',
-    initialDoc: 'https://calibre-ebook.com/downloads/demos/demo.docx',
-    },
-    viewer.current
-    ).then((instance) => {
-    const { docViewer } = instance;
-    // you can now call WebViewer APIs here ...
+    import("@pdftron/webviewer").then(() => {
+      WebViewer(
+        {
+          path: "/webviewer/lib",
+          initialDoc: "https://calibre-ebook.com/downloads/demos/demo.docx",
+        },
+        viewer.current
+      ).then((instance) => {
+        const { docViewer } = instance;
+        // you can now call WebViewer APIs here ...
+      });
     });
-  });
-    }, []);
+  }, []);
   const docs = [
     {
-        uri:"https://calibre-ebook.com/downloads/demos/demo.docx",
-        fileType: "docx",
-fileName: "docreader.docx"
+      uri: "https://calibre-ebook.com/downloads/demos/demo.docx",
+      fileType: "docx",
+      fileName: "docreader.docx",
     },
   ];
   let { user, getUser } = useGetUser();
@@ -39,8 +40,20 @@ fileName: "docreader.docx"
     // setName(user.username)
     // console.log(user);
   }, []);
-  const items = ["/legalimage1.jpg", "/legalimage2.jpg", "/legalimage3.jpg", "/legalimage4.jpg", "/legalimage5.jpg"]
-  const niggs = ["Non Disclosure Agreement","Work for Hire Agreement","Referal Agreement","Property Management Agreement","Agency Agreement"]
+  const items = [
+    "/legalimage1.jpg",
+    "/legalimage2.jpg",
+    "/legalimage3.jpg",
+    "/legalimage4.jpg",
+    "/legalimage5.jpg",
+  ];
+  const niggs = [
+    "Non Disclosure Agreement",
+    "Work for Hire Agreement",
+    "Referal Agreement",
+    "Property Management Agreement",
+    "Agency Agreement",
+  ];
 
   return (
     <div className="bg-slate-500 h-full w-screen">
