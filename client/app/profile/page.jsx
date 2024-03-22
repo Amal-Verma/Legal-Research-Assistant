@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import useGetUser from "./../integration/getUser";
+// import { Page, Text, Image, Document, StyleSheet } from "@react-pdf/renderer";
 // import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 import { useRef } from 'react';
 import WebViewer from "@pdftron/webviewer";
@@ -9,6 +10,12 @@ import './page.css'
 import Image from "next/image";
 // import l1 from '../public/legalimage1.jpg';
 const profile = () => {
+  const gg = ["./legaldoc1.pdf","./legaldoc2.pdf","./legaldoc3.pdf","./legaldoc4.pdf","./legaldoc5.pdf"]
+  // const handleDownload = (x) => { // Path to your PDF file in the public directory
+  //   const url=x
+  //   window.open(url, '_blank');
+  // };
+
   const viewer = useRef(null);
   useEffect(() => {
     import('@pdftron/webviewer').then(() => {
@@ -80,6 +87,8 @@ fileName: "docreader.docx"
                   <h3 className="font-bold text-lg">Hello!</h3>
                   <Image src={item} alt="" width={500} height={500}/>
                   <div>{niggs[index]}</div>
+                  {/* <button onClick={handleDownload(index)}>Download PDF</button> */}
+
                   <div className="modal-action">
                     <form method="dialog">
                       <button className="btn">Close</button>

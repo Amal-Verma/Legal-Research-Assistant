@@ -1,0 +1,39 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+}
+
+.cb{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input{
+    outline: none;
+    margin: 10px;
+    background-color: inherit;
+    width: 100%;
+}
+.input1{
+    border: 1px grey solid;
+    padding: 10px;
+    border-radius: 10px;
+    width: 600px;
+    display: flex;
+    margin: 10px;
+}
+.text1{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.resp{
+    border: 1px grey solid;
+    border-radius: 10px;
+    height: 300px;
+    padding: 10px;
+    width: 600px;
+
+}
