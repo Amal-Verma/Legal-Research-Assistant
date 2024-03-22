@@ -2,7 +2,7 @@
 import React from 'react'
 import './page.css'
 
-const navbar = () =>{
+const Navbar = () =>{
     return(
         <div className="navbar">
             <div className="container">
@@ -25,4 +25,4 @@ const navbar = () =>{
     );
 }
 
-export default navbar;
+export default Navbar;

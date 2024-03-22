@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 
-const landing = () => {
+const Landing = () => {
     return (
 
         <div className='flex justify-center items-center h-screen' style={{ backgroundColor: "#121415" }}>
@@ -21,4 +21,4 @@ const landing = () => {
     )
 }
 
-export default landing;
+export default Landing;

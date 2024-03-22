@@ -1,7 +1,7 @@
 import React from 'react'
 import './landingSecond.css'
 
-const landingSecond = () => {
+const LandingSecond = () => {
   return (
     <div className='h-screen' style={{ backgroundColor: "#121415" }}>
       <div className=" p-8 flex flex-col md:flex-row justify-center items-center gap-28">
@@ -32,4 +32,4 @@ const landingSecond = () => {
   )
 }
 
-export default landingSecond
+export default LandingSecond
