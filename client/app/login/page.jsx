@@ -45,7 +45,9 @@ const login = () => {
 
             <button className="btn btn-primary text-xl w-32" onClick={(e) => handleSubmit(e)}>Sign In</button>
           </form>
-          <button className="btn btn-secondary ">Not an existing user? Register</button>
+          <a href="/register">
+            <button className="btn btn-secondary ">Not an existing user? Register</button>
+          </a>
         </div>
         
       </div>
