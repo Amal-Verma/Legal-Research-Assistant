@@ -1,7 +1,7 @@
 const mongoose  = require("mongoose");
 
 module.exports =  () => {
-  mongoose.connect("mongoDbLink")
+  mongoose.connect("mongodb+srv://TestUser:yEEAV0NNqvShFD1R@cluster0.erolmtc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
     console.log("Connected to the database");
   })
