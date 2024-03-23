@@ -54,6 +54,7 @@ const profile = () => {
     "/legalimage3.jpg",
     "/legalimage4.jpg",
     "/legalimage5.jpg",
+    "/legalimage5.jpg",
   ];
   const niggs = [
     "Non Disclosure Agreement",
