@@ -6,9 +6,9 @@ import LandingSecond from "./landingSecond/landingSecond";
 export default function Home() {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <Landing/>
-    <LandingSecond/>
+    {/* <LandingSecond/> */}
     </>
   );
 }
