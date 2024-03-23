@@ -129,7 +129,11 @@ const home = () => {
       </div>
       <div className="content">
         <div className="cb">
-          <div className="input1">
+          <div className="header">
+          <p>Consultation</p>
+
+          </div>
+               <div className="input1">
             <input type="text" placeholder="Enter your query"
             value={prompt}
             onChange={(e) => handleChange(e)} />
@@ -137,7 +141,7 @@ const home = () => {
           </div>
           <div className="aianswer">
             <p className="text1">Response</p>
-            <div className="resp">kill yourself.</div>
+            <div className="resp">{response.response}</div>
           </div>
         </div>
       </div>
