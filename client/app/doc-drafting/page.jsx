@@ -107,10 +107,10 @@ const profile = () => {
                </div>
                 <dialog className="modal modalniga">
                   <div className="boxx modal-box w-11/12 max-w-5xl">
-                    <h3 className="font-bold text-lg">Hello!</h3>
+                    <h3 className="font-bold text-lg">{niggs[index]}</h3>
                     <Image src={item} alt="" width={500} height={500} />
-                    <div>{niggs[index]}</div>
-                    <button onClick={handleDownload}>Download PDF</button>
+                    {/* <div>{niggs[index]}</div> */}
+                    <button className="btn"onClick={handleDownload}>Download PDF</button>
                     <div className="modal-action">
                       <form method="dialog">
                         <button className="btn">Close</button>
