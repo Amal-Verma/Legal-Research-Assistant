@@ -21,7 +21,7 @@ const register = () => {
   return (
     <div className="overflow-hidden h-full">
       <div className="login-container flex flex-col justify-center items-center gap-10 md:flex-row h-screen md:gap-48 fixed md:relative inset-0 overflow-auto md:justify-start" style={{ backgroundColor: "#121415" }}>
-        <img src="/illus.png" alt="" width="60%" className="md:w-1/4 md:absolute right-20 order-1" />
+        <img src="/illus.png" alt="" width="60%" className="reg-img md:w-1/4 md:absolute right-20 md:order-1" />
         <div className="w-full flex flex-col gap-12 items-center justify-center md:h-screen md:rounded-e-badge md:w-9/12" style={{ backgroundColor: "#E3E3E3" }}>
           <h1 className="reg-heading text-5xl font-extrabold text-black" >Register</h1>
           <form className="flex flex-col items-center justify-center gap-6">
