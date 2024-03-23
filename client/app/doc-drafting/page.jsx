@@ -12,10 +12,10 @@ import Script from "next/script";
 // import l1 from '../public/legalimage1.jpg';
 const profile = () => {
   const gg = ["./legaldoc1.pdf","./legaldoc2.pdf","./legaldoc3.pdf","./legaldoc4.pdf","./legaldoc5.pdf"]
-  // const handleDownload = (x) => { // Path to your PDF file in the public directory
-  //   const url=x
-  //   window.open(url, '_blank');
-  // };
+  const handleDownload = () => { // Path to your PDF file in the public directory
+    const url="/legaldoc1.pdf"
+    window.open(url, '_blank');
+  };
 
   const viewer = useRef(null);
   useEffect(() => {
@@ -103,13 +103,14 @@ const profile = () => {
                 >
                   <Image src={item} alt="" width={300} height={300} />
                   <div>{niggs[index]}</div>
-                  {/* <button onClick={handleDownload(index)}>Download PDF</button> */}
+
                </div>
                 <dialog className="modal modalniga">
                   <div className="boxx modal-box w-11/12 max-w-5xl">
                     <h3 className="font-bold text-lg">Hello!</h3>
                     <Image src={item} alt="" width={500} height={500} />
                     <div>{niggs[index]}</div>
+                    <button onClick={handleDownload}>Download PDF</button>
                     <div className="modal-action">
                       <form method="dialog">
                         <button className="btn">Close</button>
