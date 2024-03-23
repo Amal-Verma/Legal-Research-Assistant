@@ -141,7 +141,7 @@ const home = () => {
           </div>
           <div className="aianswer">
             <p className="text1">Response</p>
-            <div className="resp">kill yourself.</div>
+            <div className="resp">{response.response}</div>
           </div>
         </div>
       </div>
