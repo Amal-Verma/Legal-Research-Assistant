@@ -13,6 +13,9 @@ const profile = () => {
     "./legaldoc3.pdf",
     "./legaldoc4.pdf",
     "./legaldoc5.pdf",
+    "./legaldoc6.pdf",
+    "./legaldoc7.pdf",
+    "./legaldoc8.pdf",
   ];
   const handleDownload = (index) => {
     // Path to your PDF file in the public directory
@@ -26,7 +29,9 @@ const profile = () => {
     "/legalimage3.jpg",
     "/legalimage4.jpg",
     "/legalimage5.jpg",
-    "/legalimage5.jpg",
+    "/legalimage6.jpg",
+    "/legalimage7.jpg",
+    "/legalimage8.jpg"
   ];
   const niggs = [
     "Non Disclosure Agreement",
@@ -34,6 +39,9 @@ const profile = () => {
     "Referal Agreement",
     "Property Management Agreement",
     "Agency Agreement",
+    "Payment Agreement",
+    "Non-complete Agreement",
+    "Loan Agreement"
   ];
 
   return (
@@ -41,12 +49,7 @@ const profile = () => {
       <div className="w-screen h-full" style={{ backgroundColor: "#2E2E2E" }}>
         <Navbar />
 
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center pt-24">
           <div className="h-screen w-5/6 ">
             <div className="cards grid grid-cols-3 gap-3">
               {items.map((item, index) => (
