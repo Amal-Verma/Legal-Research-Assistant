@@ -111,7 +111,7 @@ const profile = () => {
                   <div className="boxx modal-box w-11/12 max-w-5xl">
                     <h3 className="font-bold text-lg">{niggs[index]}</h3>
                     <Image src={item} alt="" width={500} height={500} />
-                    <div>{niggs[index]}</div>
+
                     <button className="btn" onClick={() => {handleDownload(index)}}>Download PDF</button>
 
                     <div className="modal-action">
