@@ -1,53 +1,25 @@
 "use client";
 
 import React, { useEffect } from "react";
-import useGetUser from "./../integration/getUser";
-// import { Page, Text, Image, Document, StyleSheet } from "@react-pdf/renderer";
-// import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
-import { useRef } from "react";
-import WebViewer from "@pdftron/webviewer";
 import "./page.css";
 import Image from "next/image";
 import Script from "next/script";
-// import l1 from '../public/legalimage1.jpg';
+import Navbar from "../navbar/navbar";
+
 const profile = () => {
-  const gg = ["./legaldoc1.pdf","./legaldoc2.pdf","./legaldoc3.pdf","./legaldoc4.pdf","./legaldoc5.pdf"]
-  const handleDownload = (index) => { // Path to your PDF file in the public directory
-    const url=gg[index]
-    window.open(url, '_blank');
-  };
-  
-
-  const viewer = useRef(null);
-  useEffect(() => {
-    import("@pdftron/webviewer").then(() => {
-      WebViewer(
-        {
-          path: "/webviewer/lib",
-          initialDoc: "https://calibre-ebook.com/downloads/demos/demo.docx",
-        },
-        viewer.current
-      ).then((instance) => {
-        const { docViewer } = instance;
-        // you can now call WebViewer APIs here ...
-      });
-    });
-  }, []);
-  const docs = [
-    {
-      uri: "https://calibre-ebook.com/downloads/demos/demo.docx",
-      fileType: "docx",
-      fileName: "docreader.docx",
-    },
+  const gg = [
+    "./legaldoc1.pdf",
+    "./legaldoc2.pdf",
+    "./legaldoc3.pdf",
+    "./legaldoc4.pdf",
+    "./legaldoc5.pdf",
   ];
-  let { user, getUser } = useGetUser();
+  const handleDownload = (index) => {
+    // Path to your PDF file in the public directory
+    const url = gg[index];
+    window.open(url, "_blank");
+  };
 
-  useEffect(() => {
-    // setName(getUser().username)
-    // getUser();
-    // setName(user.username)
-    // console.log(user);
-  }, []);
   const items = [
     "/legalimage1.jpg",
     "/legalimage2.jpg",
@@ -66,69 +38,66 @@ const profile = () => {
 
   return (
     <>
-      <div className="bg-slate-500 h-full w-screen">
-        {/* <div className="navbar bg-base-100">
-          <div className="flex-1">
-            <a className="btn btn-ghost text-xl">{user.username}</a>
-          </div>
-          <div className="flex-none">
-            <button className="btn btn-square btn-ghost">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-5 h-5 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div> */}
+      <div className="w-screen h-full" style={{ backgroundColor: "#2E2E2E" }}>
+        <Navbar />
 
-        <div className="ghk">
-          <div className="title">Defaults</div>
-          <div className="cards ">
-            {items.map((item, index) => (
-              <>
-                <div
-                  className="btn but"
-                  onClick={() =>
-                    document
-                      .getElementsByClassName("modalniga")
-                      [index].showModal()
-                  }
-                  key={index}
-                >
-                  <Image src={item} alt="" width={300} height={300} />
-                  <div>{niggs[index]}</div>
+        <br />
+        <br />
+        <br />
+        <br />
 
-               </div>
-                <dialog className="modal modalniga">
-                  <div className="boxx modal-box w-11/12 max-w-5xl">
-                    <h3 className="font-bold text-lg">{niggs[index]}</h3>
-                    <Image src={item} alt="" width={500} height={500} />
-
-                    <button className="btn" onClick={() => {handleDownload(index)}}>Download PDF</button>
-
-                    <div className="modal-action">
-                      <form method="dialog">
-                        <button className="btn">Close</button>
-                      </form>
-                    </div>
+        <div className="flex justify-center items-center">
+          <div className="h-screen w-5/6 ">
+            <div className="cards grid grid-cols-3 gap-3">
+              {items.map((item, index) => (
+                <>
+                  <div
+                    className="btn but"
+                    onClick={() =>
+                      document
+                        .getElementsByClassName("modalniga")
+                        [index].showModal()
+                    }
+                    key={index}
+                  >
+                    <Image src={item} alt="" width={300} height={300} />
+                    <div>{niggs[index]}</div>
                   </div>
-                </dialog>
-              </>
-            ))}
+                  <dialog className="modal modalniga">
+                    <div className="boxx modal-box w-11/12 max-w-5xl flex ">
+                      <Image src={item} alt="" width={500} height={500} />
+
+                        <div className="flex flex-col justify-evenly items-center w-full">
+                          <h3 className="font-bold text-3xl">{niggs[index]}</h3>
+
+                          <button
+                            className="btn"
+                            onClick={() => {
+                              handleDownload(index);
+                            }}
+                          >
+                            Download PDF
+                          </button>
+
+                          <div className="modal-action">
+                            <form method="dialog">
+                              <button className="btn">Close</button>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+                  </dialog>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       </div>
       <Script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></Script>
-<Script src="https://mediafiles.botpress.cloud/0ea2eab2-7b97-48d3-bd1b-a3a1685b6b52/webchat/config.js" defer></Script>
+      <Script
+        src="https://mediafiles.botpress.cloud/0ea2eab2-7b97-48d3-bd1b-a3a1685b6b52/webchat/config.js"
+        defer
+      ></Script>
     </>
   );
 };
