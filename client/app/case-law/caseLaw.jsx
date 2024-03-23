@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../navbar/navbar";
 
 const Case = () => {
   const CaseLaw = [
@@ -45,21 +46,32 @@ const Case = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div>
+    <Navbar />
+    <div className="pt-24 flex justify-center items-center" style={{ backgroundColor: "#121415" }}>
+      <div className="w-5/6">
+        <h2 className="case-law-heading text-3xl text-center text-white">Case Laws</h2><br />
+        <h4 className="case-law-heading text-xl text-center text-white">for Lawyers</h4>
+        <p className="text-white">Some of the most famous Case Laws: </p>
+        <div className="flex flex-col justify-center items-center">
 
-      {CaseLaw.map((item) => {
-        return (
-          <div className="collapse collapse-plus bg-base-200 m-5 w-5/6">
-            <input type="radio" name="my-accordion-3" />
-            <div className="collapse-title text-xl font-medium">
-              {item.CaseName}
-            </div>
-            <div className="collapse-content">
-              <p>{item.Content}</p>
-            </div>
-          </div>
-        );
-      })}
+
+          {CaseLaw.map((item) => {
+            return (
+              <div className="collapse collapse-plus text-slate-200 card-caseLaw card-caseLaw-name rounded-sm m-5 w-5/6">
+                <input type="radio" name="my-accordion-3" />
+                <div className="collapse-title text-xl text-purple-400 ">
+                  {item.CaseName}
+                </div>
+                <div className="collapse-content tracking-wider ">
+                  <p>{item.Content}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

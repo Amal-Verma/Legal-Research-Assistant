@@ -39,3 +39,24 @@
       /* scale: 1;     */
   }
 }
+.case-law-heading{
+  font-family: var(--Poppins);
+  font-weight: 700;
+}
+.cards-cont{
+  /* font-family: "Inter", sans-serif; */
+}
+.card{
+  height: 20rem;
+  background: linear-gradient(245deg, #1E1E1E 1.74%, rgba(86, 86, 86, 0.12) 98.98%);
+  border: 1px solid #6A6A6A;
+}
+.card-caseLaw{
+  /* height: 20rem; */
+  background: linear-gradient(245deg, #1E1E1E 1.74%, rgba(86, 86, 86, 0.12) 98.98%);
+  border: 1px solid #6A6A6A;
+}
+.card-caseLaw-name{
+  font-family: var(--Inter);
+  font-weight: 500;
+}
