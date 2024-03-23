@@ -1,3 +1,18 @@
+.illus-img{
+    animation-name: illus;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;   
+}
 .login-container{
-    
+    display: none;
+}
+@keyframes illus{
+    from{
+        left: -20rem;
+        
+    }
+    to{
+        left: 5rem;
+            
+    }
 }

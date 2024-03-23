@@ -9,3 +9,33 @@
   --Poppins: 'Poppins', sans-serif;
   --test: 'Sedgwick Ave Display', sans-serif;
 }
+
+
+.login-img{
+  animation-name: login;
+  animation-duration: 1s;    
+}
+.reg-img{
+  animation-name: reg;
+  animation-duration: 1s;
+}
+@keyframes login{
+  from{
+      left: 0;
+      /* scale: 0; */
+  }
+  to{
+      left: 5rem;
+      /* scale: 1;     */
+  }
+}
+@keyframes reg{
+  from{
+      right: 0;
+      /* scale: 0; */
+  }
+  to{
+      right: 5rem;
+      /* scale: 1;     */
+  }
+}
