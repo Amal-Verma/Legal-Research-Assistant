@@ -12,10 +12,11 @@ import Script from "next/script";
 // import l1 from '../public/legalimage1.jpg';
 const profile = () => {
   const gg = ["./legaldoc1.pdf","./legaldoc2.pdf","./legaldoc3.pdf","./legaldoc4.pdf","./legaldoc5.pdf"]
-  const handleDownload = () => { // Path to your PDF file in the public directory
-    const url="/legaldoc1.pdf"
+  const handleDownload = (index) => { // Path to your PDF file in the public directory
+    const url=gg[index]
     window.open(url, '_blank');
   };
+  
 
   const viewer = useRef(null);
   useEffect(() => {
@@ -43,7 +44,7 @@ const profile = () => {
 
   useEffect(() => {
     // setName(getUser().username)
-    getUser();
+    // getUser();
     // setName(user.username)
     // console.log(user);
   }, []);
@@ -65,7 +66,7 @@ const profile = () => {
   return (
     <>
       <div className="bg-slate-500 h-full w-screen">
-        <div className="navbar bg-base-100">
+        {/* <div className="navbar bg-base-100">
           <div className="flex-1">
             <a className="btn btn-ghost text-xl">{user.username}</a>
           </div>
@@ -86,7 +87,8 @@ const profile = () => {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
+
         <div className="ghk">
           <div className="title">Defaults</div>
           <div className="cards ">
@@ -110,7 +112,7 @@ const profile = () => {
                     <h3 className="font-bold text-lg">Hello!</h3>
                     <Image src={item} alt="" width={500} height={500} />
                     <div>{niggs[index]}</div>
-                    <button onClick={handleDownload}>Download PDF</button>
+                    <button onClick={() => {handleDownload(index)}}>Download PDF</button>
                     <div className="modal-action">
                       <form method="dialog">
                         <button className="btn">Close</button>
