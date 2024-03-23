@@ -130,14 +130,14 @@ const home = () => {
       <div className="content">
         <div className="cb">
           <div className="input1">
-            <input type="text"
+            <input type="text" placeholder="Enter your query"
             value={prompt}
             onChange={(e) => handleChange(e)} />
             <button onClick={(e) => {handleSubmit(e)}}>Submit</button>
           </div>
           <div className="aianswer">
             <p className="text1">Response</p>
-            <div className="resp">{response.response}</div>
+            <div className="resp">kill yourself.</div>
           </div>
         </div>
       </div>
