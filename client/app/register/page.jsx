@@ -53,6 +53,7 @@ const register = () => {
 
             <button className="btn btn-primary" onClick={(e) => handleSubmit(e)}>Sign Up</button>
           </form>
+          <button className="btn btn-secondary ">Already an user? Login</button>
         </div>
 
       </div>
