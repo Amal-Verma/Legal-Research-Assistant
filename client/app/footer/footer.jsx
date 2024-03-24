@@ -2,7 +2,7 @@
 import React from 'react'
 
 
-const footer = () => {
+const Footer = () => {
   return (
     <div>
       <footer className="footer p-10 text-neutral-content" style={{backgroundColor:"#2A2A2A"}}>
@@ -23,4 +23,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer
